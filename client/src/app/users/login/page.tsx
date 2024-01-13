@@ -1,7 +1,7 @@
 import { login } from "@/actions/user";
 export const dynamic = "force-dynamic";
 
-export default function Register() {
+export default function Login() {
   return (
     <div className="flex flex-col justify-center items-center my-10 py-10 font-assistant">
       <div className="w-1/4">
