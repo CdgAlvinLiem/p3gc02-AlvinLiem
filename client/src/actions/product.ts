@@ -1,7 +1,9 @@
 import { Product, ProductSample } from "@/db/type/product";
 
 export async function getDataSample(): Promise<ProductSample[]> {
-  const res = await fetch("http://localhost:3000/api/products/samples");
+  const res = await fetch(
+    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/products/samples"
+  );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -20,7 +22,7 @@ export async function getAllDataProducts(
   const searching = searchName ? `&search=${searchName}` : "";
 
   const res = await fetch(
-    `http://localhost:3000/api/products?page=${pageSearch}${searching}`,
+    `http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/products?page=${pageSearch}${searching}`,
     {
       method: "GET",
       headers: {
@@ -37,9 +39,12 @@ export async function getAllDataProducts(
 }
 
 export async function getDetail(slug: string): Promise<Product> {
-  const res = await fetch(`http://localhost:3000/api/products/${slug}`, {
-    cache: "no-cache",
-  });
+  const res = await fetch(
+    `http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/products/${slug}`,
+    {
+      cache: "no-cache",
+    }
+  );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

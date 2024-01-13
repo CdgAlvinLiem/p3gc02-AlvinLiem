@@ -12,13 +12,16 @@ export async function addUser(formData: FormData) {
     password: formData.get("password"),
   };
 
-  const res = await fetch("http://localhost:3000/api/users/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userInput),
-  });
+  const res = await fetch(
+    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/users/register",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInput),
+    }
+  );
 
   await res.json();
   redirect(`/login`);
@@ -30,13 +33,16 @@ export async function login(formData: FormData) {
     password: formData.get("password"),
   };
 
-  const res = await fetch("http://localhost:3000/api/users/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userInput),
-  });
+  const res = await fetch(
+    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/users/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInput),
+    }
+  );
 
   const { access_token } = await res.json();
 
