@@ -1,4 +1,5 @@
 import { addUser } from "@/actions/user";
+export const dynamic = "force-dynamic";
 
 export default function Register() {
   return (
