@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["img-for-hk.wds168.cn"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**img-for-hk.wds168.cn",
+        port: "",
+        pathname: "**",
+      },
+    ],
   },
 };
 
