@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export default function HomeDetailInfo() {
   return (
     <div className="flex justify-center my-12 py-12 flex-col gap-10">

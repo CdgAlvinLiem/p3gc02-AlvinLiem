@@ -1,6 +1,8 @@
 import { getDataSample } from "@/actions/product";
 import HomeCard from "./HomeCard";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomeSample() {
   const data = await getDataSample();
 

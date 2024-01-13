@@ -1,6 +1,7 @@
 "use client";
 import { addWish } from "@/actions/wishlist";
 import { ObjectId } from "mongodb";
+export const dynamic = "force-dynamic";
 
 export default function ButtonWishList({ props }: { props: ObjectId }) {
   async function handleAddWish() {

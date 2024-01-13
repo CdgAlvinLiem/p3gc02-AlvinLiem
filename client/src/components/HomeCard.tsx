@@ -1,6 +1,7 @@
 import { ProductSample } from "@/db/type/product";
 import Image from "next/image";
 import Link from "next/link";
+export const dynamic = "force-dynamic";
 
 export default function HomeCard({ product }: { product: ProductSample }) {
   return (

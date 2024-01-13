@@ -2,6 +2,8 @@
 
 import { delWish } from "@/actions/wishlist";
 
+export const dynamic = "force-dynamic";
+
 export default function WishListDelete({ props }: { props: string }) {
   async function handleDelete() {
     await delWish(props);

@@ -3,6 +3,8 @@
 import { redirect } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function ProductSideBar() {
   const [searchInput, setSearchInput] = useState("");
 

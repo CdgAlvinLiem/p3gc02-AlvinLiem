@@ -6,6 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function Navbar() {
   const [isLogged, setIsLogged] = useState(false);
   const cookie = getCookie("Authorization");

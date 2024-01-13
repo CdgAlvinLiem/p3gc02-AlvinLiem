@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+export const dynamic = "force-dynamic";
 
 export default function HomeCarousel() {
   const [slide, setSlide] = useState<number>(1);

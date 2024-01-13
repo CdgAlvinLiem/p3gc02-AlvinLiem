@@ -3,6 +3,8 @@ import Link from "next/link";
 import ButtonWishList from "./ButtonWishlist";
 import { ProductSample } from "@/db/type/product";
 
+export const dynamic = "force-dynamic";
+
 export default function ProductCard({ product }: { product: ProductSample }) {
   return (
     <>

@@ -2,6 +2,8 @@ import Image from "next/image";
 import WishListDelete from "./WishListDelete";
 import { ListWishList } from "@/db/type/wishlist";
 
+export const dynamic = "force-dynamic";
+
 export default function WishListTable({ props }: { props: ListWishList }) {
   return (
     <tr className="border-b-2 my-5 py-5">
