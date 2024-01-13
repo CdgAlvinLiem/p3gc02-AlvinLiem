@@ -2,7 +2,6 @@
 
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
-import { revalidatePath } from "next/cache";
 
 export async function addUser(formData: FormData) {
   const userInput = {
@@ -13,7 +12,7 @@ export async function addUser(formData: FormData) {
   };
 
   const res = await fetch(
-    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/users/register",
+    "https://p3gc02alvinliem.vercel.app/api/users/register",
     {
       method: "POST",
       headers: {
@@ -34,7 +33,7 @@ export async function login(formData: FormData) {
   };
 
   const res = await fetch(
-    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/users/login",
+    "https://p3gc02alvinliem.vercel.app/api/users/login",
     {
       method: "POST",
       headers: {

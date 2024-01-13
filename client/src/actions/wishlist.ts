@@ -9,17 +9,14 @@ export async function addWish(input: ObjectId) {
   const cookie = cookies().get(`Authorization`);
   const auth = cookie?.value;
   const product = { productId: input };
-  const res = await fetch(
-    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/wishlists",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Cookie: `Authorization=${auth}`,
-      },
-      body: JSON.stringify(product),
-    }
-  );
+  const res = await fetch("https://p3gc02alvinliem.vercel.app/api/wishlists", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Cookie: `Authorization=${auth}`,
+    },
+    body: JSON.stringify(product),
+  });
   const result = await res.json();
   redirect("/wishlist");
 }
@@ -31,7 +28,7 @@ export async function listWish() {
     const auth = cookie?.value;
 
     const res = await fetch(
-      "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/wishlists",
+      "https://p3gc02alvinliem.vercel.app/api/wishlists",
       {
         method: "GET",
         headers: {
@@ -54,18 +51,15 @@ export async function delWish(input: string) {
   const auth = cookie?.value;
 
   const id = { id: input };
-  const res = await fetch(
-    "http://p3gc02alvinliem-9aet7nh9u-alvinliems-projects.vercel.app/api/wishlists",
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Cookie: `Authorization=${auth}`,
-      },
-      body: JSON.stringify(id),
-      cache: "no-cache",
-    }
-  );
+  const res = await fetch("https://p3gc02alvinliem.vercel.app/api/wishlists", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Cookie: `Authorization=${auth}`,
+    },
+    body: JSON.stringify(id),
+    cache: "no-cache",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to delete data");
