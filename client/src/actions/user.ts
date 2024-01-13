@@ -21,6 +21,9 @@ export async function addUser(formData: FormData) {
       body: JSON.stringify(userInput),
     }
   );
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
   await res.json();
   redirect(`/login`);
@@ -42,6 +45,9 @@ export async function login(formData: FormData) {
       body: JSON.stringify(userInput),
     }
   );
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
   const { access_token } = await res.json();
 

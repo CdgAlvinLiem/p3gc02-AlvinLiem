@@ -17,6 +17,9 @@ export async function addWish(input: ObjectId) {
     },
     body: JSON.stringify(product),
   });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
   const result = await res.json();
   redirect("/wishlist");
 }
